@@ -1,0 +1,104 @@
+/*进入首页动画*/
+.container {
+    height: auto;
+    display: block;
+}
+
+.flash-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    -webkit-animation: fade-in-out 3s ease .5s forwards;
+    animation: fade-in-out 3s ease .5s forwards;
+    z-index: 3;
+}
+
+@-webkit-keyframes fade-in-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.flash-title h3 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 80px;
+    font-family: Futura, "Century Gothic", "helvetica neue", arial, sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 2px #ccc;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -300px;
+    width: 600px;
+    height: 300px;
+    background: #eee;
+    border-radius: 10px;
+    -webkit-animation: twinkling 3s 1 ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    line-height: 280px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@-webkit-keyframes twinkling {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn {
+    border-radius: 0;
+}

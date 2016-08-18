@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVA面试题</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+<div class="container">
+    <!--生成题集页面-->
+    <div class="form-horizontal" id="">
+        <div id="printArea">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>试卷编号</td>
+                    <td id="a1">003</td>
+                    <td>生成日期</td>
+                    <td id="a2">2016-08-15</td>
+                    <td>考官</td>
+                    <td id="a3">sdc</td>
+                    <td>面试者</td>
+                    <td id="a4">yzw</td>
+                </tr>
+                <tr>
+                    <td>考核结果</td>
+                    <td id="a5">A</td>
+                    <td>备注</td>
+                    <td id="a6" colspan="5">XXXXXXXX</td>
+                </tr>
+                </thead>
+            </table>
+            <!--题目-->
+            <Ol>
+                <!--单选题-->
+                <h4>单选题[每题<i>2</i>分]</h4>
+                <li>
+                    <ol type="A">
+                        <span>放在HTML里的哪一部分JavaScripts会在页面加载的时候被执行？</span>
+                        <li>文件头部位置</li>
+                        <li>文件尾</li>
+                        <li>&lt;head&gt;标签部分</li>
+                        <li>&lt;body&gt;标签部分</li>
+                    </ol>
+                </li>
+                <li>
+                    <ol type="A">
+                        <span>下述有关css属性position的属性值的描述，说法错误的是？</span>
+                        <li>static：没有定位，元素出现在正常的流中</li>
+                        <li>fixed：生成绝对定位的元素，相对于父元素进行定位</li>
+                        <li>relative：生成相对定位的元素，相对于元素本身正常位置进行定位。</li>
+                        <li>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。</li>
+                    </ol>
+                </li>
+                <!--多选题-->
+                <h4>多选题[每题<i>3</i>分]</h4>
+                <li>
+                    <ol type="A">
+                        <span>iframe的使用场景有？</span>
+                        <li>与第三方域名下的页面共享cookie</li>
+                        <li>上传图片，避免当前页刷新</li>
+                        <li>左边固定右边自适应的布局</li>
+                        <li>资源加载</li>
+                    </ol>
+                </li>
+                <li>
+                    <ol type="A">
+                        <span>如何让一个区块居中？</span>
+                        <li>center</li>
+                        <li>center-block</li>
+                        <li>horizontal-center</li>
+                        <li>vertical-center</li>
+                    </ol>
+                </li>
+                <!--判断题-->
+                <h4>判断题[每题<i>2</i>分]</h4>
+                <li>
+                    <ol type="A">
+                        <span>CSS属性区分大小写吗？</span>
+                        <li>YES</li>
+                        <li>NO</li>
+                    </ol>
+                </li>
+                <li>
+                    <ol type="A">
+                        <span style="">如果你对元素设置字体大小:10 rem, 当用户调整大小/拖浏览器窗口时文本将相应变化大小么？</span>
+                        <li>YES</li>
+                        <li>NO</li>
+                    </ol>
+                </li>
+                <!--问答题-->
+                <h4>问答题[每题<i>10</i>分]</h4>
+                <li>
+                    <span>Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？</span>
+                </li>
+                <li>
+                    <span>如果对象的引用被置为null，垃圾收集器是否会立即释放对象占用的内存？</span>
+                </li>
+                <!--上机题-->
+                <h4>上机题[每题<i>15</i>分]</h4>
+                <li>
+                    <span>判断输入是否是正确的邮箱格式</span>
+                </li>
+                <li>
+                    <span>找出数组 arr 中重复出现过的元素</span>
+                </li>
+            </Ol>
+            <span>请把答案按题目顺序写在下面空白处或背面并标明题号</span>
+        </div>
+        <button type="button" class="btn btn-block" onclick="printme()">打印</button>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/print.js"></script>
+</body>
+</html>

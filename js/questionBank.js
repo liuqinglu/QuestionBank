@@ -1,0 +1,24 @@
+﻿$(".inlineRadio1").click(function(){
+    $(".box").addClass("hide");
+    $("#danxuan").removeClass("hide");
+});
+$(".inlineRadio2").click(function(){
+    $(".box").addClass("hide");
+    $("#duoxuan").removeClass("hide");
+});
+$(".inlineRadio3").click(function(){
+    $(".box").addClass("hide");
+    $("#panduan").removeClass("hide");
+});
+$(".inlineRadio4").click(function(){
+    $(".box").addClass("hide");
+    $("#wendati").removeClass("hide");
+});
+$(".inlineRadio5").click(function(){
+    $(".box").addClass("hide");
+    $("#shangjiti").removeClass("hide");
+});
+$(".modal-footer .btn-info").click(function(){
+    alert("录入成功");
+    $("input").prop('checked',false);
+});

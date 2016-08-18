@@ -1,0 +1,19 @@
+.btn, .form-control {
+    border-radius: 0;
+}
+
+/*表格内容垂直居中*/
+#tby th, #tby td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*限制宽度多行文本输入框*/
+textarea {
+    resize: vertical;
+    margin-top: 10px;
+}
+
+ol li {
+    margin: 5px 0;
+}

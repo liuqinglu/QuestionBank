@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>题库系统2.0——题目组卷</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/publicStyle.css">
+    <style>
+        .form-inline {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<!--顶部导航栏-->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:;" class="navbar-brand" style="padding-top:0px;">
+                <img src="img/logo.jpg" alt="题库系统2.0" style="max-width:100%;height:50px;"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="Default.html">首页</a></li>
+                <li><a href="questionBank.html">题库管理</a></li>
+                <li class="active"><a href="testComposition.html">题目组卷</a></li>
+                <li><a href="examinationInfo.html">试卷管理</a></li>
+            </ul>
+            <div class="navbar-right">
+                <button type="button" class="btn btn-default navbar-btn ">hello!Admin</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-info navbar-btn " data-backdrop="static" data-toggle="modal" data-target="#register">登录</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--主体-->
+<div class="container">
+    <div class="row">
+        <!--主体左侧-->
+        <div class="col-sm-3">
+            <!--目录树-->
+            <div id="treeview"></div>
+        </div>
+        <!--主体右侧-->
+        <div class="col-sm-8 col-sm-offset-1">
+            <!--题型数量分值设置-->
+            <div class="form-inline">
+                <label class="control-label">单选题（共<span class="badge label label-success">81</span>道）</label>
+                <input type="number" min="0" class="form-control" id="radioNum">
+                <label class="control-label">道，</label>
+                <label class="control-label">每题</label>
+                <input type="number" min="0" class="form-control" id="radioScore">
+                <label class="control-label">分</label>
+                <!--<input type="range" min="1" max="10" style="width:100px;display: inline;"/>-->
+            </div>
+            <div class="form-inline">
+                <label class="control-label">多选题（共<span class="badge label label-success">49</span>道）</label>
+                <input type="number" min="0" max="" class="form-control" id="checkboxNum">
+                <label class="control-label">道，</label>
+                <label class="control-label">每题</label>
+                <input type="number" min="0" max="" class="form-control" id="checkboxScore">
+                <label class="control-label">分</label>
+            </div>
+            <div class="form-inline">
+                <label class="control-label">判断题（共<span class="badge label label-success">52</span>道）</label>
+                <input type="number" min="0" max="" class="form-control" id="judgeNum">
+                <label class="control-label">道，</label>
+                <label class="control-label">每题</label>
+                <input type="number" min="0" max="" class="form-control" id="nums">
+                <label class="control-label">分</label>
+            </div>
+            <div class="form-inline">
+                <label class="control-label">问答题（共<span class="badge label label-success">47</span>道）</label>
+                <input type="number" min="0" max="" class="form-control" id="num">
+                <label class="control-label">道，</label>
+                <label class="control-label">每题</label>
+                <input type="number" min="0" max="" class="form-control" id="nums">
+                <label class="control-label">分</label>
+            </div>
+            <div class="form-inline">
+                <label class="control-label">上机题（共<span class="badge label label-success">23</span>道）</label>
+                <input type="number" min="0" max="" class="form-control" id="num">
+                <label class="control-label">道，</label>
+                <label class="control-label">每题</label>
+                <input type="number" min="0" max="" class="form-control" id="nums">
+                <label class="control-label">分</label>
+            </div>
+            <div class="form-inline">
+                <label class="control-label" style="text-indent: 6em">总分：</label>
+                <input type="text" readonly="readonly" class="form-control" id="totalScore">
+            </div>
+            <div class="form-group" style="margin:30px 0 0 130px;">
+                <a href="onlineTest.html" class="btn btn-info" id="onlineTest">在线答题</a>
+                <a href="print.html" class="btn btn-info" id="print">打印试卷</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 登录框（Modal） -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">题库系统2.0登录</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="" placeholder="请输入您的用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="" placeholder="请输入您的密码">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-paginator.min.js"></script>
+<script src="js/bootstrap-treeview.min.js"></script>
+<script src="js/publicFun.js"></script>
+<script type="text/javascript">
+    //判断输入题数是否超出已有题数
+    $("#radioNum").on('blur', function () {
+        var nums = 81;
+        var num = $("#radioNum").val();
+        if (num > nums) {
+            alert("超过总题数");
+        }
+    });
+    window.history.forward(1);
+</script>
+</body>
+</html>

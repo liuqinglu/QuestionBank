@@ -1,0 +1,17 @@
+.btn, .form-control {
+    border-radius: 0;
+}
+
+thead td {
+    width: 100px;
+}
+
+h4, ol > span {
+    display: inline-block;
+    text-indent: -2em;
+}
+
+li > span {
+    display: inline-block;
+    text-indent: 0.5em;
+}

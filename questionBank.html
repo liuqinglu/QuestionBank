@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>题库系统2.0——题库管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/publicStyle.css">
+    <style>
+        table {
+            table-layout: fixed;
+        }
+        table td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<!--顶部导航栏-->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:;" class="navbar-brand" style="padding-top:0px;">
+                <img src="img/logo.jpg" alt="题库系统2.0" style="max-width:100%;height:50px;"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="Default.html">首页</a></li>
+                <li class="active"><a href="questionBank.html">题库管理</a></li>
+                <li><a href="testComposition.html">题目组题</a></li>
+                <li><a href="examinationInfo.html">试卷管理</a></li>
+            </ul>
+            <div class="navbar-right">
+                <button type="button" class="btn btn-default navbar-btn ">hello!Admin</button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-info navbar-btn " data-backdrop="static" data-toggle="modal" data-target="#register">登录</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--主体-->
+<div class="container">
+    <div class="row">
+        <!--主体左部份-->
+        <div class="col-sm-3">
+            <div id="treeview"></div>
+        </div>
+        <!--主体右部份-->
+        <div class="col-sm-8 col-sm-offset-1">
+            <!--录入+搜索-->
+            <div class="form-group">
+                <button type="button" class="btn btn-default pull-left col-sm-2" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus"></span> 录入题库</button>
+                <!--搜索框-搜索题目关键字-->
+                <div class="input-group col-sm-6 col-sm-offset-6">
+                    <input type="text" class="form-control" placeholder="搜索题目关键字">
+                    <div class="input-group-btn">
+                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!--显示已录入题目-->
+            <table class="table table-bordered table-striped" id="tby">
+                <thead>
+                <tr>
+                    <th style="width: 50px;">题号</th>
+                    <th>问题</th>
+                    <th>答案</th>
+                    <th style="width:150px;">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur, consequuntur culpa exercitationem expedita facere id maiores molestiae officiis placeat quae
+                        ratione rem repellat repudiandae saepe, sapiente tempore veritatis vitae.
+                    </td>
+                    <td>X Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at dolores facilis iure magnam maiores sit voluptatem? Amet distinctio illo laborum libero natus numquam odit
+                        possimus sint, velit voluptates. Quia.
+                    </td>
+                    <td>
+                        <button class="glyphicon glyphicon-pencil btn btn-default" data-toggle="modal" data-target="#edit" title="编辑"></button>
+                        <button class="glyphicon glyphicon-trash btn btn-default" title="删除"></button>
+                        <button class="glyphicon glyphicon-search btn btn-default" data-toggle="modal" data-target="#detail" title="查看"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>javascript Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur at commodi corporis earum ex excepturi facere in iure, laudantium mollitia, quam quia quidem
+                        quos reiciendis rerum sequi veritatis. Voluptatum!
+                    </td>
+                    <td>XX Lorem ipsum dolor sit amet.</td>
+                    <td>
+                        <button class="glyphicon glyphicon-pencil btn btn-default" data-toggle="modal" data-target="#edit" title="编辑"></button>
+                        <button class="glyphicon glyphicon-trash btn btn-default" title="删除"></button>
+                        <button class="glyphicon glyphicon-search btn btn-default" data-toggle="modal" data-target="#detail" title="查看"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>jQuery Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias!</td>
+                    <td>XXX Lorem ipsum dolor.</td>
+                    <td>
+                        <button class="glyphicon glyphicon-pencil btn btn-default" data-toggle="modal" data-target="#edit" title="编辑"></button>
+                        <button class="glyphicon glyphicon-trash btn btn-default" title="删除"></button>
+                        <button class="glyphicon glyphicon-search btn btn-default" data-toggle="modal" data-target="#detail" title="查看"></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--分页-->
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--模态框-登录框（Modal）-->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    题库系统2.0登录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="请输入您的用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="请输入您的密码">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-success">
+                    登录
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-录入题库-->
+<div class="modal fade" id="add" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">录入题库</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">题目类型</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="addstyle" class="inlineRadio1" value="option1" checked>单选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addstyle" class="inlineRadio2" value="option2">多选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addstyle" class="inlineRadio3" value="option3">判断
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addstyle" class="inlineRadio4" value="option4">问答题
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addstyle" class="inlineRadio5" value="option5">实操（上机题）
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">难度</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="addlevel" id="low" value="option1">低
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addlevel" id="in" value="option2" checked>中
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="addlevel" id="high" value="option3">高
+                            </label>
+                        </div>
+                    </div>
+                    <!--单选-->
+                    <div class="form-group box" id="danxuan">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                            <ol id="item1" type="A">
+                                <li>
+                                    <input type="radio" name="val" value="A"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="B"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="C"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="D"/>
+                                    <input type="text">
+                                </li>
+                            </ol>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--多选-->
+                    <div class="form-group box hide" id="duoxuan">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                            <ol id="item1" type="A">
+                                <li>
+                                    <input type="checkbox" name="val" value="A"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="val" value="B"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="val" value="C"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="val" value="D"/>
+                                    <input type="text">
+                                </li>
+                            </ol>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--判断-->
+                    <div class="form-group box hide" id="panduan">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                            <ol id="item1" type="A">
+                                <li>
+                                    <input type="radio" name="val" value="A"/>
+                                    <input type="text" value="YES">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="B"/>
+                                    <input type="text" value="NO">
+                                </li>
+                            </ol>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!--问答题-->
+                    <div class="form-group box hide" id="wendati">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <!--上机题-->
+                    <div class="form-group box hide" id="shangjiti">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-编辑题目-->
+<div class="modal fade" id="edit" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">编辑题目</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">题目类型</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="editstyle" class="inlineRadio1" value="option1" disabled checked>单选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editstyle" class="inlineRadio2" value="option2" disabled>多选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editstyle" class="inlineRadio3" value="option3" disabled>判断
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editstyle" class="inlineRadio4" value="option4" disabled>问答题
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editstyle" class="inlineRadio5" value="option5" disabled>实操（上机题）
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">难度</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="editlevel" id="low" value="option1">低
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editlevel" id="in" value="option2" checked>中
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="editlevel" id="high" value="option3">高
+                            </label>
+                        </div>
+                    </div>
+                    <!--单选-->
+                    <div class="form-group" id="danxuan">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3"></textarea>
+                            <ol id="item1" type="A">
+                                <li>
+                                    <input type="radio" name="val" value="A"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="B"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="C"/>
+                                    <input type="text">
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="D"/>
+                                    <input type="text">
+                                </li>
+                            </ol>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框-查看题目-->
+<div class="modal fade" id="detail" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="modal-title">题目详情</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">题目类型</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="detailstyle" class="inlineRadio1" value="option1" checked disabled>单选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detailstyle" class="inlineRadio2" value="option2" disabled>多选
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detailstyle" class="inlineRadio3" value="option3" disabled>判断
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detailstyle" class="inlineRadio4" value="option4" disabled>问答题
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detailstyle" class="inlineRadio5" value="option5" disabled>实操（上机题）
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">难度</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="detaillevel" id="low" value="option1" disabled>低
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detaillevel" id="in" value="option2" checked disabled>中
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="detaillevel" id="high" value="option3" disabled>高
+                            </label>
+                        </div>
+                    </div>
+                    <!--单选-->
+                    <div class="form-group" id="danxuan">
+                        <label class="control-label col-sm-2">问题</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3" readonly="readonly">下述有关css属性position的属性值的描述，说法错误的是？</textarea>
+                            <ol id="item1" type="A">
+                                <li>
+                                    <input type="radio" name="val" value="A" disabled/>
+                                    <span>static：没有定位，元素出现在正常的流中</span>
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="B" checked disabled/>
+                                    <span>fixed：生成绝对定位的元素，相对于父元素进行定位</span>
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="C" disabled/>
+                                    <span>relative：生成相对定位的元素，相对于元素本身正常位置进行定位。</span>
+                                </li>
+                                <li>
+                                    <input type="radio" name="val" value="D" disabled/>
+                                    <span>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。</span>
+                                </li>
+                            </ol>
+                        </div>
+                        <label class="control-label col-sm-2">答案</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="B" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-paginator.min.js"></script>
+<script src="js/bootstrap-treeview.min.js"></script>
+<script src="js/publicFun.js"></script>
+<script src="js/questionBank.js"></script>
+</body>
+</html>
