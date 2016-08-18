@@ -36,8 +36,7 @@
                 <li class="active"><a href="examinationInfo.html">试卷管理</a></li>
             </ul>
             <div class="navbar-right">
-                <button type="button" class="btn btn-default navbar-btn ">hello!Admin</button>
-                &nbsp;&nbsp;
+                <button type="button" class="btn btn-default navbar-btn ">hello!Admin</button>&nbsp;&nbsp;
                 <button type="button" class="btn btn-info navbar-btn " data-backdrop="static" data-toggle="modal" data-target="#register">登录</button>
             </div>
         </div>
@@ -74,7 +73,8 @@
             <td>xxx</td>
             <td>100</td>
             <td>
-                <button type="button" data-backdrop="static" data-toggle="modal" data-target="#InitTest" class="btn btn-default" title="试卷评分" onclick="InitTest()"><i class="glyphicon glyphicon-ok"></i></button>
+                <button type="button" data-backdrop="static" data-toggle="modal" data-target="#InitTest" class="btn btn-default" title="试卷评分" onclick="InitTest()"><i
+                        class="glyphicon glyphicon-ok"></i></button>
                 <button type="button" class="btn btn-default" title="删除" onclick="DeleteTest()"><i class="glyphicon glyphicon-trash"></i></button>
                 <button type="button" data-toggle="modal" data-target="#detailTest" class="btn btn-default" title="试卷查看" onclick="detailTest()"><i class="glyphicon glyphicon-search"></i></button>
             </td>
@@ -210,25 +210,24 @@
                 <ol type="1">
                     <li class="form-group">
                         <label>简述this关键字用法。<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
+                        <textarea id="texta1" class="form-control" rows="5" readonly="readonly">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">答案：this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
                     </li>
                     <li class="form-group">
                         <label>html5有哪些新特性？<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header
-                            (footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
+                        <textarea id="texta2" class="form-control" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
                     </li>
                     <li class="form-group">
                         <label>启动一个线程是用run()还是start()?<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" cols="30" rows="5"
-                                  readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
                     </li>
                 </ol>
                 <h4>总分数：<span>15</span>分</h4>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-success">提交</button>
             </div>
         </div>
@@ -248,19 +247,18 @@
                 <ol type="1">
                     <li class="form-group">
                         <label>简述this关键字用法。<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" readonly="readonly" cols="30" rows="5">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
+                        <textarea class="form-control" readonly="readonly" rows="5">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
+                        <textarea class="form-control" readonly="readonly" rows="5">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
                     </li>
                     <li class="form-group">
                         <label>html5有哪些新特性？<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">
-                            (1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.
-                        </textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
+                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
                     </li>
                     <li class="form-group">
                         <label>启动一个线程是用run()还是start()?<input type="number" min="0" max="5"/></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">
-                            启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。
-                        </textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
+                        <textarea class="form-control" rows="5" readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
                     </li>
                 </ol>
                 <h4>总分数：<span>15</span>分</h4>
@@ -271,13 +269,44 @@
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-paginator.min.js"></script>
-<script src="js/examinationInfo.js"></script>
+<!--<script src="js/examinationInfo.js"></script>-->
 <script>
     $(function () {
         //根据浏览器当前窗口文档的高度设置模态框的内容区scroll高度
         var winHeight = $(document).height();//浏览器当前窗口文档的高度
         //alert(winHeight*0.7);
-        $("#grade").css("height", winHeight*0.7);
+        $("#grade").css("height", winHeight * 0.7);
+
+        //根据textarea内的字符串长度设置高度
+        var str = $("#texta1").val();
+        function strlength(str) {
+            var len = 0;
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charCodeAt(i);
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                    len++;//单字节加1
+                } else {
+                    len += 2;//汉字加2
+                }
+            }
+            return len;
+        }
+        $("#texta1").prop("rows", strlength(str) / 50);
+
+        var str = $("#texta2").val();
+        function strlength(str) {
+            var len = 0;
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charCodeAt(i);
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                    len++;//单字节加1
+                } else {
+                    len += 2;//汉字加2
+                }
+            }
+            return len;
+        }
+        $("#texta2").prop("rows", strlength(str) / 50);
     })
 </script>
 </body>
