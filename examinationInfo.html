@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="javascript:;" class="navbar-brand" style="padding-top:0px;">
+            <a href="javascript:;" class="navbar-brand" style="padding-top:0;">
                 <img src="img/logo.jpg" alt="题库系统2.0" style="max-width:100%;height:50px;"/>
             </a>
         </div>
@@ -74,11 +74,9 @@
             <td>xxx</td>
             <td>100</td>
             <td>
-                <button type="button" data-backdrop="static" data-toggle="modal" data-target="#InitTest" class="btn btn-default" title="试卷评分" onclick="InitTest()"><i
-                        class="glyphicon glyphicon-ok"></i></button>
+                <button type="button" data-backdrop="static" data-toggle="modal" data-target="#InitTest" class="btn btn-default" title="试卷评分" onclick="InitTest()"><i class="glyphicon glyphicon-ok"></i></button>
                 <button type="button" class="btn btn-default" title="删除" onclick="DeleteTest()"><i class="glyphicon glyphicon-trash"></i></button>
-                <button type="button" data-toggle="modal" data-target="#detailTest" class="btn btn-default" title="试卷查看" onclick="detailTest()"><i
-                        class="glyphicon glyphicon-search"></i></button>
+                <button type="button" data-toggle="modal" data-target="#detailTest" class="btn btn-default" title="试卷查看" onclick="detailTest()"><i class="glyphicon glyphicon-search"></i></button>
             </td>
         </tr>
         <tr>
@@ -207,32 +205,31 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">试卷评分</h4>
             </div>
-            <div class="modal-body" style="height:500px;overflow-y:scroll;">
+            <div class="modal-body" id="grade" style="overflow-y:scroll;">
                 <h4>问答题：每题<span>5</span>分</h4>
                 <ol type="1">
                     <li class="form-group">
-                        <label>简述this关键字用法。<input type="number" min="0" max="5" /></label>
+                        <label>简述this关键字用法。<input type="number" min="0" max="5"/></label>
                         <textarea class="form-control" cols="30" rows="5" readonly="readonly">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
                         <textarea class="form-control" cols="30" rows="5" readonly="readonly">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
                     </li>
                     <li class="form-group">
-                        <label>html5有哪些新特性？<input type="number" min="0" max="5" /></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
+                        <label>html5有哪些新特性？<input type="number" min="0" max="5"/></label>
+                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">(1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header
+                            (footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.</textarea>
                     </li>
                     <li class="form-group">
-                        <label>启动一个线程是用run()还是start()?<input type="number" min="0" max="5" /></label>
-                        <textarea class="form-control" cols="30" rows="5" readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
+                        <label>启动一个线程是用run()还是start()?<input type="number" min="0" max="5"/></label>
+                        <textarea class="form-control" cols="30" rows="5"
+                                  readonly="readonly">启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</textarea>
                     </li>
                 </ol>
                 <h4>总分数：<span>15</span>分</h4>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default"
-                        data-dismiss="modal">关闭
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                 </button>
-                <button type="button" class="btn btn-success">
-                    提交
-                </button>
+                <button type="button" class="btn btn-success">提交</button>
             </div>
         </div>
     </div>
@@ -250,11 +247,11 @@
                 <h4>问答题：每题<span>5</span>分</h4>
                 <ol type="1">
                     <li class="form-group">
-                        <label>简述this关键字用法。<input type="number" min="0" max="5" /></label>
+                        <label>简述this关键字用法。<input type="number" min="0" max="5"/></label>
                         <textarea class="form-control" readonly="readonly" cols="30" rows="5">this关键字使用在实例方法中，代表调用该方法的当前对象。</textarea>
                     </li>
                     <li class="form-group">
-                        <label>html5有哪些新特性？<input type="number" min="0" max="5" /></label>
+                        <label>html5有哪些新特性？<input type="number" min="0" max="5"/></label>
                         <textarea class="form-control" cols="30" rows="5" readonly="readonly">
                             (1)新的文档类型:声明方式<!DOCTYPE html>(2)脚本和链接无需type(3)语义Header和Footer：以前<div id=“header(footer)“></div>，现在<header(footer)></header(footer)>(4)新元素Hgroup：<hgroup><h1></h1><h2></h2></hgroup>(5)标记元素（高亮标签）：<mark></mark>比如说，当我在某博客中搜索“Open your Mind”时，我可以利用一些JavaScript将出现的词组用<mark>修饰一下.
                         </textarea>
@@ -276,16 +273,11 @@
 <script src="js/bootstrap-paginator.min.js"></script>
 <script src="js/examinationInfo.js"></script>
 <script>
-    $(document).ready(function(){
-        alert($(window).height()); //浏览器当前窗口可视区域高度
-        alert($(document).height()); //浏览器当前窗口文档的高度
-        alert($(document.body).height());//浏览器当前窗口文档body的高度
-        alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin
-
-        alert($(window).width()); //浏览器当前窗口可视区域宽度
-        alert($(document).width());//浏览器当前窗口文档对象宽度
-        alert($(document.body).width());//浏览器当前窗口文档body的宽度
-        alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin
+    $(function () {
+        //根据浏览器当前窗口文档的高度设置模态框的内容区scroll高度
+        var winHeight = $(document).height();//浏览器当前窗口文档的高度
+        //alert(winHeight*0.7);
+        $("#grade").css("height", winHeight*0.7);
     })
 </script>
 </body>
