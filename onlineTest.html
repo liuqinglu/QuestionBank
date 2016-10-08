@@ -29,7 +29,7 @@
             <li><label><input type="radio" name="2" value="A"/><span>文件头部位置</span></label></li>
             <li><label><input type="radio" name="2" value="B"/><span>文件尾</span></label></li>
             <li><label><input type="radio" name="2" value="C"/><span>&lt;head&gt;标签部分</span></label></li>
-            <li><label><input type="radio" name="2" value="D"/><span id="sp1"></span></label></li>
+            <li><label><input type="radio" name="2" value="D"/><span>&lt;body&gt;标签部分</span></label></li>
         </ol>
     </div>
     <h4>多选题[每题<i>3</i>分]</h4>
@@ -76,17 +76,20 @@
         <div class="form-group">
         <b>10、</b><span class="subject-question">找出数组 arr 中重复出现过的元素</span>
     </div>
+    <!-- 提交按钮 -->
     <input type="button" class="btn btn-block btn-info" id="sub" value="提交">
 </div>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-    $(function () {
-        $("#sp1").text("<body>标签部分");
-        $("#sub").on("click",function(){
-            alert("提交成功");
-        })
-    })
+    //单选题，选中变色
+    $("ol li").on("click", function () {
+        $(this).addClass("green").siblings().removeClass("green");
+    });
+
+    $("#sub").on("click",function(){
+        alert("提交成功");
+    });
 </script>
 </body>
 </html>

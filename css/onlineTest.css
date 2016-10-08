@@ -1,10 +1,14 @@
 .btn, .form-control {
     border-radius: 0;
 }
-
+/* 鼠标移入变色 */
 li:hover {
     color: #0c9;
     background: #eee;
+}
+/* 选中项变色 */
+.green {
+    background-color: #efe;
 }
 
 li label {
